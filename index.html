@@ -1,0 +1,556 @@
+
+<?php
+session_start();
+
+if (isset($_SESSION["cadastro_concluido"])) {
+
+  header("Location: #openModal");
+
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link rel="shortcut icon" href="images/star.png" type="favicon/ico" /> -->
+
+        <title>Real Salgados</title>
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/owl.carousel.css">
+        <link rel="stylesheet" href="css/owl.theme.css">
+        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="css/flexslider.css">
+        <link rel="stylesheet" href="css/pricing.css">
+        <link rel="stylesheet" href="css/main.css">
+
+
+        <script src="js/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery.flexslider.min.js"></script>
+        <script type="text/javascript">
+            $(window).load(function() {
+                $('.flexslider').flexslider({
+                 animation: "slide",
+                 controlsContainer: ".flexslider-container"
+                });
+            });
+        </script>
+
+        <script src="https://maps.googleapis.com/maps/api/js"></script>
+        <script>
+            function initialize() {
+                var mapCanvas = document.getElementById('map-canvas');
+                var mapOptions = {
+                    center: new google.maps.LatLng(24.909439, 91.833800),
+                    zoom: 16,
+                    scrollwheel: false,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                }
+                var map = new google.maps.Map(mapCanvas, mapOptions)
+
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(24.909439, 91.833800),
+                    title:"Mamma's Kitchen Restaurant"
+                });
+
+                // To add the marker to the map, call setMap();
+                marker.setMap(map);
+            }
+            google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+
+
+    </head>
+    <body data-spy="scroll" data-target="#template-navbar">
+        
+        
+        
+        
+
+        <!--== 4. Navigation ==-->
+        <nav id="template-navbar" class="navbar navbar-default custom-navbar-default navbar-fixed-top">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#Food-fair-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        <img id="logo" src="images/Logo_main.png" class="logo img-responsive">
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="Food-fair-toggle">
+                    
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#about">Sobre</a></li>
+                        <li><a href="#pricing">Comprar</a></li>
+                        <li><a href="#local">Localização</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                        <li><a href="#email">Enviar  Email</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.row -->
+        </nav>
+        
+
+
+        <!--== 5. Header ==-->
+        <section id="header-slider" class="owl-carousel">
+             
+            <div class="item">
+                
+                <div class="container">
+                    <div class="header-content">
+                        <h1 class="header-title"></h1>  <!--texto da figura do baner principal-->
+                        <p class="header-sub-title"></p>
+                    </div> <!-- /.header-content -->
+                </div>
+            </div>
+            <div class="item">
+                <div class="container">
+                    <div class="header-content">
+                        <h1 class="header-title"></h1><!--texto da figura do baner principal-->
+                        <p class="header-sub-title"></p>
+                    </div> <!-- /.header-content -->
+                </div>
+            </div>
+            <div class="item">
+                <div class="container">
+                    <div class="header-content text-right pull-right">
+                        <h1 class="header-title"></h1><!--texto da figura do baner principal-->
+                        <p class="header-sub-title"></p>
+                    </div> <!-- /.header-content -->
+                </div>
+            </div>
+        </section>
+        
+
+
+
+        <!--== 6. About us ==-->
+        <section id="about" class="about">
+            <img src="images/icons/about_color.png" class="img-responsive section-icon hidden-sm hidden-xs">
+            <div class="wrapper">
+                <div class="container-fluid">
+                    <div class="row dis-table">
+                        <div class="hidden-xs col-sm-6 section-bg about-bg dis-table-cell">
+
+                        </div>
+                        <div class="col-xs-12 col-sm-6 dis-table-cell">
+                            <div class="section-content">
+                                <h2 class="section-content-title">Sobre nós</h2>
+                                <p class="section-content-para">
+                                   Torna-se referência na comercialização e distribuição de salgados, proporcionando facilidade e satisfação para nossos clientes.
+Proporcionar e garantir excelência nos serviços prestados, sempre oferecendo produtos de alta qualidade.
+
+                                </p>
+                                <p class="section-content-para">
+                                    Valorizamos o comprometimento e a inovação em qualidade, motivando as pessoas através da integridade para o desenvolvimento pessoal.
+                                </p>
+                            </div> <!-- /.section-content -->
+                        </div>
+                    </div> <!-- /.row -->
+                </div> <!-- /.container-fluid -->
+            </div> <!-- /.wrapper -->
+        </section> <!-- /#about -->
+<h2 class="section-content-title">Faça um pedido com nosso atendente virtual</h2>
+
+<iframe width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/2aeec709-900d-4d8b-a579-f10476c28292"></iframe>
+
+<br><br><br><br><br>
+
+        <!--==  7. Afordable Pricing  ==-->
+        <section id="pricing" class="pricing">
+            <div id="w">
+                <div class="pricing-filter">
+                    <div class="pricing-filter-wrapper">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <div class="section-header">
+                                        <h2 class="pricing-title">Nosso menu</h2>
+                                        <ul id="filter-list" class="clearfix">
+                                            <li class="filter" data-filter="all">Todos</li>
+                                            <li class="filter" data-filter=".breakfast">Fritos</li>
+                                            <li class="filter" data-filter=".special">Assados</li>
+                                            <li class="filter" data-filter=".desert">Sucos</li>
+                                            <li class="filter" data-filter=".dinner">Refrigerantes</li>
+                                        </ul><!-- @end #filter-list -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    
+                    <div class="row">  
+                        <div class="col-md-10 col-md-offset-1">
+                            <ul id="menu-pricing" class="menu-price">
+                                
+                                
+                                <li class="item dinner">
+
+                                    <a href="#">
+                                        <img src="images/food1.jpg" class="img-responsive" alt="Food" >
+                                        <div class="menu-desc text-center">
+                                            <span>
+                                                <h3>Tomato Curry</h3>
+                                                Natalie &amp; Justin Cleaning by Justin Younger
+                                            </span>
+                                        </div>
+                                    </a>s
+                                        
+                                    <h2 class="white">R$ 1,00</h2>
+                                </li>
+
+                                <li class="item breakfast">
+
+                                    <a href="#">
+                                        <img src="images/food2.jpg" class="img-responsive" alt="Food" >
+                                        <div class="menu-desc">
+                                            <span>
+                                                <h3>Prawn Dish</h3>
+                                                Lorem ipsum dolor sit amet
+                                            </span>
+                                        </div>
+                                    </a>
+                                        
+                                    <h2 class="white">R$ 1,00</h2>
+                                </li>
+                                <li class="item desert">
+
+                                    <a href="#">
+                                        <img src="images/food3.jpg" class="img-responsive" alt="Food" >
+                                        <div class="menu-desc">
+                                            <span>
+                                                <h3>Salad Dish</h3>
+                                                Consectetur adipisicing elit, sed do eiusmod
+                                            </span>
+                                        </div>
+                                    </a>
+                                        
+                                    <h2 class="white">R$ 1,00</h2>
+                                </li>
+                                <li class="item breakfast special">
+
+                                    <a href="#">
+                                        <img src="images/food4.jpg" class="img-responsive" alt="Food" >
+                                        <div class="menu-desc">
+                                            <span>
+                                                <h3>Prawn Dish</h3>
+                                                Tempor incididunt ut labore et dolore
+                                            </span>
+                                        </div>
+                                    </a>
+                                        
+                                    <h2 class="white">R$ 1,00</h2>
+                                </li>
+                                <li class="item breakfast">
+
+                                    <a href="#">
+                                        <img src="images/food5.jpg" class="img-responsive" alt="Food" >
+                                        <div class="menu-desc">
+                                            <span>
+                                                <h3>Vegetable Dish</h3>
+                                                Magna aliqua. Ut enim ad minim veniam
+                                            </span>
+                                        </div>
+                                    </a>
+                                        
+                                    <h2 class="white">R$ 1,00</h2>
+                                </li>
+                                <li class="item dinner special">
+
+                                    <a href="#">
+                                        <img src="images/food6.jpg" class="img-responsive" alt="Food" >
+                                        <div class="menu-desc">
+                                            <span>
+                                                <h3>Chicken Dish</h3>
+                                                Quis nostrud exercitation ullamco laboris
+                                            </span>
+                                        </div>
+                                    </a>
+
+                                    <h2 class="white">R$ 1,00</h2>
+                                </li>
+                                <li class="item desert">
+
+                                    <a href="#">
+                                        <img src="images/food7.jpg" class="img-responsive" alt="Food" >
+                                        <div class="menu-desc">
+                                            <span>
+                                                <h3>Vegetable Noodles</h3>
+                                                Nisi ut aliquip ex ea commodo
+                                            </span>
+                                        </div>
+                                    </a>
+
+                                    <h2 class="white">R$ 1,00</h2>
+                                </li>
+                                <li class="item dinner">
+
+                                    <a href="#">
+                                        <img src="images/food8.jpg" class="img-responsive" alt="Food" >
+                                        <div class="menu-desc">
+                                            <span>
+                                                <h3>Special Salad</h3>
+                                                Duis aute irure dolor in reprehenderit
+                                            </span>
+                                        </div>
+                                    </a>
+
+                                    <h2 class="white">R$ 1,00</h2>
+                                </li>
+                                <li class="item desert special">
+
+                                    <a href="#">
+                                        <img src="images/food9.jpg" class="img-responsive" alt="Food" >
+                                        <div class="menu-desc">
+                                            <span>
+                                                <h3>Ice-cream</h3>
+                                                Excepteur sint occaecat cupidatat non
+                                            </span>
+                                        </div>
+                                    </a>
+                                    
+                                    <h2 class="white">R$ 1,00</h2>
+                                </li>  
+                            </ul>
+
+                            <!-- <div class="text-center">
+                                    <a id="loadPricingContent" class="btn btn-middle hidden-sm hidden-xs">Load More <span class="caret"></span></a>
+                            </div> -->
+
+                        </div>   
+                    </div>
+                </div>
+
+            </div> 
+        </section>
+        
+       
+
+
+        <!--== 8. Great Place to enjoy ==-->
+        <section id="great-place-to-enjoy" class="great-place-to-enjoy">
+            <img class="img-responsive section-icon hidden-sm hidden-xs" src="images/icons/beer_black.png">
+            <div class="wrapper">
+                <div class="container-fluid">
+                    <div class="row dis-table">
+                        <div class="col-xs-6 col-sm-6 dis-table-cell color-bg">
+                            <h2 class="section-title">Salgados Picantes</h2>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 dis-table-cell section-bg">
+                            
+                        </div>
+                    </div> <!-- /.dis-table -->
+                </div> <!-- /.row -->
+            </div> <!-- /.wrapper -->
+        </section> <!-- /#great-place-to-enjoy -->
+
+
+
+       <br><br>
+
+
+
+        <!--== 10. Our Breakfast Menu ==-->
+        <section id="breakfast" class="breakfast">
+            <img class="img-responsive section-icon hidden-sm hidden-xs" src="images/icons/bread_black.png">
+            <div class="wrapper">
+                <div class="container-fluid">
+                    <div class="row dis-table">
+                        <div class="col-xs-6 col-sm-6 dis-table-cell color-bg">
+                            <h2 class="section-title">Salgados para festas</h2>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 dis-table-cell section-bg">
+                            
+                        </div>
+                    </div> <!-- /.dis-table -->
+                </div> <!-- /.row -->
+            </div> <!-- /.wrapper -->
+        </section> <!-- /#breakfast -->
+
+
+
+       
+
+
+                      
+
+ <br><br><br> 
+
+       
+
+<br>
+
+
+       
+
+
+        <section class="reservation">
+            <img class="img-responsive section-icon hidden-sm hidden-xs" src="images/icons/reserve_color.png">
+            <div class="wrapper">
+                <div class="container-fluid">
+                    <div class=" section-content">
+                        <div class="row">
+                            <div class="col-md-5 col-sm-6">
+                              
+                            </div>
+
+
+
+                            <div class="col-md-2 hidden-sm hidden-xs"></div>
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="opening-time">
+                                    <h4 class="opening-time-title">Horario de atendimento</h4>
+                                    <p>De segunda a sexta das 14:00 as 18:00</p>
+                                    
+                                          <br>
+                                    <div class="launch">
+                                        <h4>Encomendas</h4>
+                                        <p>Aceitamos pedidos com três dias de antecedencia</p>
+                                    </div>
+                                      
+                                    <div class="dinner">
+                                        <h4></h4>
+                                        <p></p>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <section id="contact" class="contact">
+            <div class="container-fluid color-bg">
+                <div class="row dis-table">
+                   <div class="hidden-xs col-sm-6 dis-table-cell">
+                        <h2 class="section-title">Chegar ate nós</h2>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 dis-table-cell">
+                        <div class="section-content">
+                            <p>Iporá-Goias</p>
+                            <p>64 98166-9266</p>
+                            <p>uendercarlos@hotmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-media">
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                            <ul class="center-block">
+                                <li><a href="#" class="fb"></a></li>
+                                <li><a href="#" class="twit"></a></li>
+                               
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+  <section id="local" class="local">
+       <div class="map-responsive">
+		   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3826.6062455541373!2d-51.10989918513663!3d-16.444812338649893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9366bc33ba3d4e7d%3A0x39597b271f471107!2sReal+Salgados+(Comidas%2C+Fast-food%2C+Restaurante%2C+Coxinhas+e+Past%C3%A9is)+Ipor%C3%A1!5e0!3m2!1spt-PT!2sbr!4v1564025026829!5m2!1spt-PT!2sbr" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+		</div>
+
+</section>
+ <section id="email" class="local">
+        <section class="contact-form">
+            <div class="container">
+                <div class="row">
+                    <div align="center">
+                     <h4>Se quiser pode enviar uma mensagem para nós</h4>
+                    </div>
+                    
+                    <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+                        <div class="row">
+                           
+                             <form class="contact-form" method="post" action="envia_email_post.php">
+                                 
+                                 
+                                
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                                <input type="text" class="form-control reserve-form empty iconified" name="Nome" id="Nome" required="required" placeholder="  &#xf007;  Nome">
+                                </div>
+                                            
+                                     <div class="form-group">
+                                                <input type="tel" class="form-control reserve-form empty iconified" name="Email" id="Email" required="required" placeholder="  &#xf095;  Telefone">
+                                     </div>
+                                   
+                                </div>
+
+                               <div class="col-md-12 col-sm-12">
+                                            <textarea type="text" name="Mensagem" class="form-control reserve-form empty iconified" id="Mensagem" rows="3" required="required" placeholder="  &#xf086; Digite aqui sua mensagem"></textarea>
+                                 </div>
+
+                                <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
+                                    <div class="text-center">
+                                        <button type="submit" id="submit" name="submit" class="btn btn-send">Enviar </button>
+                                    </div>
+                                </div>
+                            </form>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </section>
+
+   <section id="contato" class="contato">
+       
+        </section>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="copyright text-center">
+                            <p>
+                                &copy; Copyright, 2019 <a href="#">Uender Carlos.</a> <a href=""  target=""></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mixitup.min.js" ></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/jquery.validate.js"></script>
+        <script type="text/javascript" src="js/jquery.hoverdir.js"></script>
+        <script type="text/javascript" src="js/jQuery.scrollSpeed.js"></script>
+        <script src="js/script.js"></script>
+        
+
+    </body>
+</html>
+<?php
+unset($_SESSION["cadastro_concluido"]);
+?>
